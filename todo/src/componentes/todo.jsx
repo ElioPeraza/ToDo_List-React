@@ -21,8 +21,8 @@ const NombresList = () => {
         }
     };
     // 
-    const eliminarNombre = (indice) => {
-        const arrayTemporal = [
+    const eliminarNombre = (indice) => { 
+        const arrayTemporal = [ 
             ...arrayNombres.slice(0, indice),   //copia antes del indice
             ...arrayNombres.slice(indice + 1)   //copia despues del indice
         ];
@@ -48,7 +48,8 @@ const NombresList = () => {
                 <ol>
                     {arrayNombres.map((nombre, indice) => (
                         <li key={indice}>{nombre}
-                        <span onClick ={() => eliminarNombre(indice)}> X </span>
+                        <span onClick ={() => eliminarNombre(indice)}><span className="delete">x</span></span>
+                        
                         </li>
                         
                     ))}

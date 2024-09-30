@@ -11,11 +11,22 @@ body {
   margin: 0;
 }
 
-.contenedor {
+.contenedor{
   background-color: #fff;
-  padding: 20px;
   border-radius: 10px;  
-  box-shadow: 0 4px 8px rgba(194, 183, 183, 0.1);
+  box-shadow:
+  /* The top layer shadow */
+  0 1px 1px rgba(0,0,0,0.15),
+  /* The second layer */
+  0 10px 0 -5px #eee,
+  /* The second layer shadow */
+  0 10px 1px -4px rgba(0,0,0,0.15),
+   /* The third layer */
+  0 20px 0 -10px #eee,
+  /* The third layer shadow */
+  0 20px 1px -9px rgba(0,0,0,0.15);
+  /* Padding for demo purposes */
+  padding: 30px;
   max-width: 400px;
   width: 100%;
   text-align: center;
@@ -44,12 +55,14 @@ ol {
 }
 
 li {
-  background-color: #e7e4e4;
-  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
+  background-color: #f0f0f0;
+  margin: 5px 0;
   border-radius: 5px;
-  font-size: 18px;
-  transition: background-color 0.3s;
+  cursor: pointer;
 }
 
 li:hover {
@@ -69,9 +82,20 @@ span {
   cursor: pointer;
   font-weight: bold;
   cursor: "pointer",
- 
+  
 }
 
 span:hover {
   color: darkred;
+  display: inline;
+}
+.delete {
+  display: none;
+  color: red;
+  font-weight: bold;
+  margin-left: 10px;
+  cursor: pointer;
+}
+li:hover .delete {
+  display: inline;
 }
